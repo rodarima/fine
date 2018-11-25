@@ -10,7 +10,8 @@
 \usetheme{Pittsburgh}
 \usecolortheme{whale}
 \usepackage{siunitx}
-\usepackage{wiki}
+\usepackage{graphicx}
+\graphicspath{{fig/}}
 
 \input{layout}
 
@@ -27,7 +28,6 @@
 	\titlepage
 \end{frame}
 \note{}
-\wikimarkup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Introduction}
@@ -76,31 +76,56 @@ followed by the wind with \SI{12}{\milli\watt\per\centi\meter\squared}.
 \note{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Smaller frame overhead}
+	\frametitle{Smaller frame overhead %
+		\footnote{Following [178] paper in depth: Uplink Contention Based Multiple 
+		Access for 5G Cellular IoT}%
+	}
 
 	\begin{itemize}
-		\item 
-	\end{itemize}
+		\item Bursty traffic cause devices to change state between idle and 
+		connected with the associate \textbf{power consumption}
+		\item Significant \textbf{overhead} with small packets
+		\item Contention based method have been proposed
+		\end{itemize}
 \end{frame}
 \note{Expand based on reference 178}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Green metrics}
+	\frametitle{Uplink contention based methods}
+
+
+	\begin{center}
+	\includegraphics[scale=0.3]{uc.png}
+	\end{center}
+
+	\begin{itemize}
+		\item Small signalling payload
+		\item Direct small data packet
+	\end{itemize}
 \end{frame}
 \note{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Power consumption}
+	\frametitle{Results of simulation}
+
+	\begin{center}
+	\includegraphics[scale=0.4]{cb-latency.png}
+	\end{center}
+
 \end{frame}
 \note{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Open problems}
 
-* Power control in green communications
-* Energy efficient hardware
-* Energy efficient network architecture
-* Battery technology enhancement: sugar bio-batteries
+\begin{itemize}
+\item Power control in green communications
+\item Energy efficient hardware
+\item Energy efficient network architecture
+\item Battery technology enhancement: sugar bio-batteries %
+\footnote{Following [183] paper in depth: \textsl{A high-energy-density sugar 
+biobattery based on a synthetic enzymatic pathway}}
+\end{itemize}
 
 \end{frame}
 \note{}
