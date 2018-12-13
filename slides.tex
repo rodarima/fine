@@ -4,7 +4,7 @@
 % Change to 0 to produce only slides without the notes,%
 % to 1 to generate an A4 document with the notes.      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\includeNotes{0}
+\def\includeNotes{1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usetheme{Pittsburgh}
@@ -14,7 +14,7 @@
 \graphicspath{{fig/}}
 
 \input{layout}
-
+ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Green communications in 5G}
@@ -47,6 +47,23 @@ increase 100 times and the data volume by 1000 times
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Network planning and deployment}
+\end{frame}
+\note{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Reducing power consumption [181]}
+	\begin{center}
+	\includegraphics[scale=1]{consumption.png}
+	\end{center}
+
+\begin{itemize}
+
+	\item The base station is the most power intensive element (more than 50\%).
+	\item Also the usual lifetime is around 10--15 years, while smartphones is 2.
+	\item By reducing the power consumption of the largest element, the whole 
+	consumption is reduced.
+
+\end{itemize}
 \end{frame}
 \note{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -143,23 +160,6 @@ biobattery based on a synthetic enzymatic pathway}}
 	\SI{15.5}{\mega\joule\per\kilogram}
 
 	\item Sugars are non toxic, safe and carbon neutral
-
-\end{itemize}
-\end{frame}
-\note{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{Reducing power consumption [181]}
-	\begin{center}
-	\includegraphics[scale=1]{consumption.png}
-	\end{center}
-
-\begin{itemize}
-
-	\item The base station is the most power intensive element (more than 50\%).
-	\item Also the usual lifetime is around 10--15 years, while smartphones is 2.
-	\item By reducing the power consumption of the largest element, the whole 
-	consumption is reduced.
 
 \end{itemize}
 \end{frame}
