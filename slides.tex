@@ -1,10 +1,10 @@
-\documentclass[a4paper,12pt,handout]{beamer}
+\documentclass[a4paper,11pt,handout]{beamer}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Change to 0 to produce only slides without the notes,%
 % to 1 to generate an A4 document with the notes.      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\includeNotes{1}
+\def\includeNotes{0}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usetheme{Pittsburgh}
@@ -137,19 +137,50 @@ followed by the wind with \SI{12}{\milli\watt\per\centi\meter\squared}.
 \frametitle{Open problems}
 
 \begin{itemize}
-\item Power control in green communications
-\item Energy efficient hardware
-\item Energy efficient network architecture
-\item Battery technology enhancement: sugar bio-batteries %
+\item Power control: max power BS, sunlight.
+\item Energy efficient hardware: transceivers
+\item Energy efficient network architecture: SDN, NFV, data/control plane
+\item New battery technologies: sugar bio-batteries%
 \footnote{Following [183] paper in depth: \textsl{A high-energy-density sugar 
-biobattery based on a synthetic enzymatic pathway}}
+biobattery based on a synthetic enzymatic pathway}}, photo-MFC
 \end{itemize}
 
 \end{frame}
-\note{}
+\note{
+There are some challenges to be resolved.
+\begin{itemize}
+	\item Power control
+	\begin{itemize}
+		\item In multi-tiered networks, the user is not connected to the BS with 
+		maximum power.
+		\item Solar and wind energy harvesting can be unfeasible in dense localities 
+		and where sunlight is not available.
+	\end{itemize}
+	\item Energy efficient hardware
+	\begin{itemize}
+		\item Current transceivers are energy costly, as they are designed for good 
+		throughput.
+	\end{itemize}
+	\item Energy efficient network architecture
+	\begin{itemize}
+		\item Multiple technologies as MIMO, SDN, NFV, D2D, cloud computing...
+		\item Separation of control and data planes
+		\end{itemize}
+	\item New battery technologies: sugar bio-batteries, photo-MFC%
+	\begin{itemize}
+		\item Based on enzymes that extract energy from sugar, similar to humans.
+		\item Moss can also be used to harvest solar power
+		\item Still with a low efficiency to be used.
+	\end{itemize}
+\end{itemize}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Sugar bio-batteries [183]}
+
+	\begin{center}
+	\includegraphics[scale=0.3]{trash.jpg}
+	\end{center}
 
 \begin{itemize}
 
@@ -160,6 +191,24 @@ biobattery based on a synthetic enzymatic pathway}}
 	\SI{15.5}{\mega\joule\per\kilogram}
 
 	\item Sugars are non toxic, safe and carbon neutral
+
+\end{itemize}
+\end{frame}
+\note{
+Experiments with bio-batteries seem to have a suitable position as power cells.  
+The cells consist of some enzymes placed close to an electrode. A 
+
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Sugar bio-batteries [183]}
+
+\begin{itemize}
+
+	\item Maltodextrin (food additive), produced from starch.
+	\item Sugars are non toxic, safe and carbon neutral
+	\item The lifetime of enzymes is very short (weeks)
+	\item They have to be recharged regularly.
 
 \end{itemize}
 \end{frame}
