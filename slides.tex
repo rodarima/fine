@@ -53,6 +53,22 @@ This paper takes as a starting point the situation of today and tries to pinpoin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Network planning and deployment}
+    \begin{itemize}
+\item Challenges 
+\begin{itemize} 
+\item data traffic volumes
+\item Number of connected devices
+\item Diverse requirements of 5G
+\item Energy consumption
+\end{itemize}
+\item Potential solutions 
+\begin{itemize} 
+\item Architectural design
+\item Network deployment
+\item Radio transmission
+\item Backhauling solutions
+\end{itemize}
+    \end{itemize}
 \end{frame}
 \note{%
 Intro:
@@ -67,30 +83,17 @@ This paper takes as a starting point the situation of today and tries to pinpoin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-	\frametitle{Challenges}
-\begin{itemize}
-\item Data traffic Volumes
-\item The number of connected devices
-\item  Diverse requirements
-\item  Energy consumption
-\end{itemize}
-
-\end{frame}
-\note{
-Challenges:
-green design perspective will be discussed in the following subsections
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-	\frametitle{Data traffic Volumes}
+	\frametitle{Challenges: Data traffic Volumes}
     \begin{itemize}
 \item Today: 2 billion mobile broadband subscriptions 
 \item Exponential growth in the following years 
-\item A factor of 1000x capacity demand in 2020 vs 2012
-\item  
+\item A factor of 1000x capacity demand in 2020 vs 2012  
 \end{itemize}
+\begin{center}
+	\includegraphics[scale=1]{Evolution_of_mobile_data_traffic_per_month_up_to_2018}
+	\end{center}
 \end{frame}
+
 \note{Data traffic volumes:
 Today, there are over 2 billion mobile broadband subscriptions worldwide, a figure that has grown by 40 percent annually over the last six years.
 
@@ -103,12 +106,12 @@ capacity. With this approach, the exponential growth rate will imply a costly ne
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-	\frametitle{The number of connected devices}
+	\frametitle{Challenges: The number of connected devices}
         \begin{itemize}
 \item Today:  7 billion mobile devices  
 \item Future: Smart devices (smart grid, sensors and surveilence camera's) 
 \item Internet of things (IoT)
-\item  
+
 \end{itemize}
 \end{frame}
 \note{
@@ -121,68 +124,169 @@ communication, and means that everything that can benefit from a wireless connec
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Diverse requirements}
+	\frametitle{Challenges: Diverse requirements}
             \begin{itemize}
 \item Different applications of 5G
+\begin{itemize}
 \item Low latency 
-\item Different data sizes
-\item  
+\item High reliability
+\item Different data sizes (e.g. security cameras (large) and temperature sensor (small))
+\item Varying quality of service (QoS) requirements
+\begin{itemize}
+\item Green energy should not have a negative impact on the QoS
+\end{itemize}
+\end{itemize}
 \end{itemize}
 \end{frame}
 \note{
 Challenges:
-green design perspective will be discussed in the following subsections
+5G will include a myriad of applications with a wide range of requirements and characteristics.
+
+Some applications may require low latency, for example, time-critical control functions in industrial applications. The same type of applications typically also require very high reliability, while others such as simple sensors can have lower reliability requirements. Certain applications such as surveillance cameras may have to convey enormous amounts of data while others have very small data amount to send.
+
+varying quality-of-service (QoS) requirements. This may have a significant impact on
+the green design, as the minimization of network power consumption, should not have impacts on the correct and efficient management of the QoS in the system.
 
 
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Challenges}
+	\frametitle{Challenges: Energy consumption}
+    \begin{itemize}
+    \item Operational expenditure (OPEX)
+    \item The energy consumption should at least be kept at the same level as today
+    	\begin{itemize}
+    	\item Increasing number of devices
+    	\item Increasing number of traffic 
+   		\item New requirements 
+\end{itemize}
+
+\end{itemize}
 \end{frame}
 \note{
-Challenges:
-green design perspective will be discussed in the following subsections
+Challenges: Energy consumption:
+Already today, the mobile operator’s energy bill is a substantial and increasing part of their OPEX,
+
+The energy consumption should at least be kept at the same level as today (despite the traffic growth, the massive amount of devices, and new requirements)
+
+The EARTH project showed that it is possible to cut the energy consumption of
+LTE by a factor of 4 with a 2012 baseline [10].
+
+5GrEEn will target a factor of 10 lower energy consumption compared to today while fulfilling the requirements stated in the previous subsections.
 
 
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Challenges}
+	\frametitle{Potential solutions: Architectural design }
+    \begin{itemize} 
+\item Architectural design
+\begin{itemize}
+\item An energy efficient system needs to be efficient both when transmitting data as well as when we are not transmitting data
+\item logical separation between idle mode functions and user plane data transmission
+\end{itemize}
+
+\item Dynamic cells with reconfigurable antenna systems 
+\end{itemize}
+\begin{center}
+	\includegraphics[scale=1]{Logical_separation_between_idle_mode_and_active_mode_network}
+	\end{center}    
+    
 \end{frame}
 \note{
 Challenges:
-green design perspective will be discussed in the following subsections
+Equations:
+An energy efficient system needs to be efficient both when transmitting data as well as when we are not transmitting data. 
+
+To do this, we will assume a logical separation between idle mode functions (such as the transmission of system information) and user plane data transmission and reception, see Fig. 2.
+In this architectural design, cells can be viewed as UE specific resources for data transfer that are dynamically created and configured to support only the currently active UEs. 
+
+Moreover, an access point may be utilized by more than one cell. Also, a dynamic cell may fully utilize a reconfigurable antenna system (using e.g. beam-width and tilt optimization) at the access point(s) in order to shape the coverage in the best way.
+
+The control plane carries control information (also known as signalling); the user plane carries the network's users’ traffic; the management plane carries the operations and administration traffic required for network management. Broadcast of
+system information also belongs to the management plane. By separation of the network into these planes we facilitate e.g. independent utilization of access points by the planes, i.e. a given access point may be used by a subset of the planes. 
+Hence independent deployment of the different plane entities can be done at the
+most energy efficient location.
 
 
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Challenges}
+	\frametitle{Potential solutions: Network Deployment}
+    \begin{itemize}
+    \item Heterogeneous network deployment \begin{itemize}
+\item Small cells are deployed under an umbrella of macro cells
+\item Small cells offload macro cells --> overall energy saving 
+\item Improves coverage in areas 
+\end{itemize}
+\item Deployment is interesting in places where high data rates are needed (e.g. Shopping malls and train stations)\begin{itemize}
+\item Indoor places
+\item Energy savings due to avoidance of power consuming wall penetration
+\end{itemize}
+    \end{itemize}
+    
 \end{frame}
 \note{
 Challenges:
-green design perspective will be discussed in the following subsections
+Energy efficiency improvements through network deployment strategies have been touched upon in several projects for state-of-art technologies.
 
+Especially heterogeneous network deployments, where small cells are deployed under an umbrella macro-cellular coverage, have gained great interest and have been presented as a promising solution for improving energy efficiency of LTE [13]. This is due to the fact that if correctly placed the small cells can significantly offload the macro cells with an overall energy saving as result. In order to handle the future capacity demands and the massive amounts of different devices, it is expected that even denser deployments, so-called ultra-dense deployments (see Fig. 3), will be necessary. 
+These deployments are of particular interest in areas where extremely high data rates and capacity are needed, for example in offices, shopping malls, and subway stations. As these typically are located indoor, we can expect this to be beneficial from an energy consumption perspective due to the avoidance of power consuming wall penetration.
+
+If care is not taken in the design a small cell deployment can still result in increased energy consumption.
+
+5GrEEn will develop energy-optimized heterogeneous network deployment strategies for different traffic distributions and environments that will provide capacity where it is actually needed and will bring maximum benefit from the additional flexibility created by the new system architecture.
+
+Future network dimensioning will not only consider the busy hour traffic and aim to minimize the total power consumption for the worst case scenario -as is currently being applied- but it will take the daily traffic variation into account to minimize the overall energy consumption. New network deployment solutions need to be developed that minimize the energy consumption through long- and short-term sleep opportunities by exploiting the flexibility in the new system architecture. 
 
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Challenges}
+	\frametitle{Potential solutions: Radio Transmissions}
+    \begin{itemize}
+    \item Avoid sending signals in directions with no receivers
+\item Multiple-input multiple-output (MIMO) transmission
+\item Beam forming 
+\item MIMO --> Will boost peak data rates \begin{itemize}
+\item Boost peak data rates
+\item Higher data rates mean more time to sleep
+\item Higher data rates mean less base stations are necessary 
+\end{itemize}
+    \end{itemize}
 \end{frame}
 \note{
-Challenges:
-green design perspective will be discussed in the following subsections
+As already mentioned in the system architecture section above, an energy efficient system needs to be efficient both when transmitting data as well as when we are not
+transmitting data. In order to be energy efficient when transmitting data, all we need to do is to “send the packet to the receiver”. We should do it quickly and we should try to avoid sending signals in directions that do not reach the receiver.
 
+Multiple-input multiple-output (MIMO) transmission which allows both multi-layer transmission for increased data rates, and beamforming to a certain extent.
+We believe that the MIMO technology has further potential. Recently, massive antenna configurations, or very large MIMO, have gained increased interest.
+
+MIMO will further boost peak data rates and system capacity, which can benefit energy efficiency in two ways; higher peak data rates mean more time for sleep, higher system capacity means that a future traffic demand can be served without a corresponding densification of the network.
+
+Such high gain beamforming, in combination with the system architecture solutions mentioned above, can allow increased inter-site distances with maintained system capacity, which of course is beneficial from an energy efficiency point of view.
 
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Challenges}
+	\frametitle{Potential solution: Bachhauling }
+    \begin{itemize}
+    \item Trade-off between power saved by using small and low power base stations and the baseline power that has to be spent to backhaul their traffic
+    \end{itemize}
+    \begin{center}
+	\includegraphics[scale=1]{Illustration_of_possible_backhauling_solution}
+	\end{center} 
 \end{frame}
 \note{
-Challenges:
-green design perspective will be discussed in the following subsections
+Backhauling Solutions 
+Despite the relative scarce attention paid to the role of backhaul in optimizing the overall power budget of mobile radio networks, recent studies have highlighted its remarkable impact especially when heterogeneous deployments are considered [18]. The results showed that there is a trade off between the power saved by using small and low power base stations and the baseline power that has to be spent to backhaul their traffic.
 
+In 5GrEEn, we will tackle these questions and study various existing and future backhaul technologies. We will consider the advantages/disadvantages of different backhaul technologies, e.g., microwave, fibre, copper, for different deployment scenarios as shown in Fig. 4.
+For example, fibre-based backhaul has higher CAPEX and longer deployment
+time but offer long-term support with respect to increasing capacity requirements. Microwave is an appealing solution due to its quick and relatively cheap deployment potential. On the other hand, there is still a great interest in copper based solution in order to increase their capacity so that the existing infrastructure can still be exploited at its maximum. Therefore, a “one solution fits all” may not be viable.
+
+The result of a mix of fiber, microwave and copper, depending on several factors, e.g., existing infrastructure, spectrum and license costs, availability of equipment, operator business modeling, and QoS level to be provided.
+
+With this knowledge, it will also be possible to define new and holistic wireless deployment strategies tailored for specific back haul architectures to avoid the bottleneck in the back haul power consumption.
 
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
