@@ -11,10 +11,14 @@
 \usecolortheme{whale}
 \usepackage{siunitx}
 \usepackage{graphicx}
+\usefonttheme[onlymath]{serif}
+
+\setlength{\parskip}{1em}
+
 \graphicspath{{fig/}}
 
 \input{layout}
- 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Green communications in 5G}
@@ -368,5 +372,108 @@ The cells consist of some enzymes placed close to an electrode. A
 \end{frame}
 \note{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{frame}
+\frametitle{Energy efficiency metrics [179]}
+
+\begin{itemize}
+
+	\item We need some way to compare energy efficiency (EE), but which metric is 
+more suitable?
+	\item Output energy/input energy?
+	\item Performance/energy consumption?
+	\item What load should we use for the measurement?
+	\item Accuracy?
+
+\end{itemize}
+\end{frame}
+\note{
+In order to obtain an meaningful comparison of different technologies used in 
+electronic communications, some metrics should be established so we can compare 
+the energy efficiency.
+
+Some candidates as the output power by the input power are useful when we can 
+measure the power, but some times other measurements are more interesting. For 
+example if we look at a processing unit, we may be interested in the performance 
+per watt.
+
+The base stations can operate at different loads, and the metric should include 
+information of the load to be compared. Also the accuracy of the metric should 
+be taken into consideration, as it may include information of fluctuations when 
+the system is under operation.
+
+We will focus on the metrics used at different levels of abstraction, starting 
+from the lowest part, the component level, to the uppermost, the network level.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{EE at component level}
+
+	\begin{figure}[h]
+	\begin{center}
+	\includegraphics[scale=0.3]{ee-component.png}
+	\end{center}
+	\end{figure}
+
+\begin{itemize}
+
+	\item The components are analyzed by parts
+	\item Example: The efficiency of the antenna as the input power that it 
+receives compared with the irradiated power.
+	\item On the baseband processor, EE is measured as performance per unit of 
+energy consumption.
+	\item For the power supply, output power/input power, often higher than 
+85\%
+
+\end{itemize}
+\end{frame}
+\note{
+A general model is commonly used, as the one in the figure, to understand the 
+different parts of a system. In each part we can identify and measure the 
+efficiency based on specific metrics.
+
+In the case of a radio base station, which may include one or more antennas, the 
+efficiency can be expressed as the ratio of the radiated power $P_r$ to the 
+input power $P_i$, $$ \eta = P_r / P_i$$
+
+Whereas, in a baseband processor we are interested in the performance per watt, 
+which can be measured by means of MFLOPS or MIPS which often can be expressed in 
+equivalent MOPS (millions of operations per second).
+
+The power supply is normally measured in terms of electrical efficiency, with 
+the ration of output power by input power, often higher than 85\%.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{EE at equipment level}
+
+\begin{itemize}
+
+	\item Power is computed by the average power level (high, med, low).
+	\item Power supply correction factor and cooling factor.
+	\item Energy consumption rating: Power/effective throughput.
+
+\end{itemize}
+\end{frame}
+\note{
+
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{EE at network level}
+
+\begin{itemize}
+
+	\item Rural, cellular: Coverage area/average power consumption
+	\item Urban: Subscribers/average power consumption
+	\item Error correction: transmitter power/bit rate
+
+\end{itemize}
+\end{frame}
+\note{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \end{document}
 
