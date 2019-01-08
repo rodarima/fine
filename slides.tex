@@ -245,53 +245,96 @@ most energy efficient location.
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Potential solutions: Network Deployment}
+	\frametitle{Potential solution: Network deployment }
     \begin{itemize}
-    \item Heterogeneous network deployment \begin{itemize}
-\item Small cells are deployed under an umbrella of macro cells
-\item Small cells offload macro cells --> overall energy saving 
-\item Improves coverage in areas 
+    \item An increasing amount of base stations (BS) is used to cope with the increasing demand of high speed mobile networks\begin{itemize}
+    \item Increasing amount of energy consumption
+\item 70-80 $\%$ of energy is used by base stations 
+    \end{itemize}
+\item Energy aware Hertrogeneous network (Het-Net)\begin{itemize}
+\item Mix of cell shapes and sizes
+\item Macro and micro BS
+\item Micro cells can offload macro cells $\rightarrow$ reducing energy consumption 
+\item Macro cells are responsible for basic coverage
+\item Micro cells provide higher data rates to nearby users
 \end{itemize}
 \item Deployment is interesting in places where high data rates are needed (e.g. Shopping malls and train stations)\begin{itemize}
 \item Indoor places
 \item Energy savings due to avoidance of power consuming wall penetration
 \end{itemize}
     \end{itemize}
-    
 \end{frame}
 \note{
-Challenges:
-Energy efficiency improvements through network deployment strategies have been touched upon in several projects for state-of-art technologies.
+Base stations are deployed because of the growth of the telecommunication industry
+However, this hike in the deployment of base stations will lead to immense energy consumption, because in mobile networks 70–80 of the power is consumed by base stations (BSs).
+This means an increase in CO2 emissions in the environment. In addition, energy bills represent a major chunk of the cost for wireless operators.
+Therefore the development of ‘energy-aware Heterogeneous Networks (Het-Nets)’ are increasing. Het-Nets are a mix of various cell shapes and sizes. Including Macro and micro cells
+By choosing the location of the microcells and relays optimally within the range of a macro cell, they can significantly offload the macrocell and produce energy savings while providing better coverage. Macro cells are responsible for the basic coverage of the cell users, and the small cells are effective in providing higher data rates to their nearby users in dense areas with reduced power consumption.
 
-Especially heterogeneous network deployments, where small cells are deployed under an umbrella macro-cellular coverage, have gained great interest and have been presented as a promising solution for improving energy efficiency of LTE [13]. This is due to the fact that if correctly placed the small cells can significantly offload the macro cells with an overall energy saving as result. In order to handle the future capacity demands and the massive amounts of different devices, it is expected that even denser deployments, so-called ultra-dense deployments (see Fig. 3), will be necessary. 
-These deployments are of particular interest in areas where extremely high data rates and capacity are needed, for example in offices, shopping malls, and subway stations. As these typically are located indoor, we can expect this to be beneficial from an energy consumption perspective due to the avoidance of power consuming wall penetration.
+These optimizations are especially efficient in areas where extremely high capacity and data rates are needed like offices, shopping malls, subway stations, etc., 
+where the user density is large. Since most of these places are indoor, indoor access points should be deployed so that energy wastage due to wall penetration can be avoided.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Potential solution: Heterogeneous networks }
 
-If care is not taken in the design a small cell deployment can still result in increased energy consumption.
-
-5GrEEn will develop energy-optimized heterogeneous network deployment strategies for different traffic distributions and environments that will provide capacity where it is actually needed and will bring maximum benefit from the additional flexibility created by the new system architecture.
-
-Future network dimensioning will not only consider the busy hour traffic and aim to minimize the total power consumption for the worst case scenario -as is currently being applied- but it will take the daily traffic variation into account to minimize the overall energy consumption. New network deployment solutions need to be developed that minimize the energy consumption through long- and short-term sleep opportunities by exploiting the flexibility in the new system architecture. 
+    \begin{center}
+	\includegraphics[scale=0.7]{An_illustration_of_macro-relay_network}
+	\end{center} 
+\end{frame}
+\note{
 
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+	\frametitle{Potential solution: Heterogeneous networks }
+
+    \begin{center}
+	\includegraphics[scale=0.7]{Illistration_of_the_number_of_active_macro_base_stations_vs_7_cell_LTE-advance}
+	\end{center} 
+\end{frame}
+\note{
+The number of active macro cells decrease when more micro cells are used allowing for the macro stations to go to sleep more often for more time, and thus decreasing the overall power usage
+}
+
+
+
+%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Potential solution: Heterogeneous networks }
+
+    \begin{center}
+	\includegraphics[scale=0.7]{5GRoadmap-10_key_enabling_technologies-COMNET}
+	\end{center} 
+\end{frame}
+
+\note{
+The more micro stations are used in the network the more power can be saved. This is due to the fact that the micro stations are being used for micro to micro communication bypassing the macro stations allowing the macro stations to sleep
+}
+%%%%%
 \begin{frame}
 	\frametitle{Potential solutions: Radio Transmissions}
     \begin{itemize}
     \item Avoid sending signals in directions with no receivers
 \item Multiple-input multiple-output (MIMO) transmission
 \item Beam forming 
-\item MIMO --> Will boost peak data rates \begin{itemize}
+\item MIMO $\rightarrow$ Will boost peak data rates \begin{itemize}
 \item Boost peak data rates
 \item Higher data rates mean more time to sleep
 \item Higher data rates mean less base stations are necessary 
 \end{itemize}
     \end{itemize}
+        \begin{center}
+	\includegraphics[scale=0.6]{emil-5g-fig2}
+	\end{center} 
+    
 \end{frame}
 \note{
 As already mentioned in the system architecture section above, an energy efficient system needs to be efficient both when transmitting data as well as when we are not
 transmitting data. In order to be energy efficient when transmitting data, all we need to do is to “send the packet to the receiver”. We should do it quickly and we should try to avoid sending signals in directions that do not reach the receiver.
 
-Multiple-input multiple-output (MIMO) transmission which allows both multi-layer transmission for increased data rates, and beamforming to a certain extent.
+Multiple-input multiple-output (MIMO) transmission which allows both multi-layer transmission for increased data rates, and beam forming to a certain extent.
 We believe that the MIMO technology has further potential. Recently, massive antenna configurations, or very large MIMO, have gained increased interest.
 
 MIMO will further boost peak data rates and system capacity, which can benefit energy efficiency in two ways; higher peak data rates mean more time for sleep, higher system capacity means that a future traffic demand can be served without a corresponding densification of the network.
@@ -320,9 +363,9 @@ time but offer long-term support with respect to increasing capacity requirement
 The result of a mix of fiber, microwave and copper, depending on several factors, e.g., existing infrastructure, spectrum and license costs, availability of equipment, operator business modeling, and QoS level to be provided.
 
 With this knowledge, it will also be possible to define new and holistic wireless deployment strategies tailored for specific back haul architectures to avoid the bottleneck in the back haul power consumption.
-
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}
 \frametitle{Reducing power consumption [181]}
 	\begin{center}
@@ -667,6 +710,19 @@ footprint at minimum.
 
 With the standarization of new metrics for energy efficiency, we expect more 
 competitive hardware to be replaced in the coming years.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{References}
+\begin{itemize}
+	\item 5G roadmap: 10 key enabling technologies Ian F. Akyildiz, Shuai Nie ∗, Shih-Chun Lin, Manoj Chandrasekaran
+\item Towards Energy-Aware 5G Heterogeneous Networks Hafiz Yasar Lateef, Mischa Dohler, Amr Mohammed, Mohsen Mokhtar Guizani and Carla Fabiana Chiasserini
+\item Green Radio: Radio Techniques to Enable Energy-Efficient Wireless Networks. Congzheng Han, Tim Harrold, and Simon Armour, University of Bristol Ioannis Krikidis, Stefan Videv, Peter M. Grant, Harald Haas, and John S. Thompson, University of Edinburgh Ivan Ku and Cheng-Xiang Wang, Heriot-Watt University Tuan Anh Le and M. Reza Nakhai, Kings College London Jiayi Zhang and Lajos Hanzo, University of Southampton
+\item 5GrEEn: Towards Green 5G Mobile Networks M. Olsson, C. Cavdar, P. Frenger, S. Tombaz, D. Sabella, R. Jantti
+\end{itemize}
+\end{frame}
+\note{
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
