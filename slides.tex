@@ -34,6 +34,35 @@
 \note{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+\frametitle{Outline}
+
+\begin{itemize}
+	\item Introduction
+	\item Challenges
+	\begin{itemize}
+		\item Data traffic volumes
+		\item Number of connected devices
+		\item Diverse requirements of 5G
+		\item Energy consumption
+	\end{itemize}
+	\item Potential solutions
+	\begin{itemize}
+		\item Architectural design
+		\item Network deployment
+		\item Radio transmission
+		\item Backhauling solutions
+		\item Harvesting renewable energy
+		\item Reducing the frame size
+	\end{itemize}
+	\item Energy efficiency metrics
+	\item Conclusions
+\end{itemize}
+
+\end{frame}
+\note{%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
 \frametitle{Introduction}
 \begin{itemize}
 
@@ -58,21 +87,21 @@ This paper takes as a starting point the situation of today and tries to pinpoin
 \begin{frame}
 	\frametitle{Network planning and deployment}
     \begin{itemize}
-\item Challenges 
-\begin{itemize} 
+\item Challenges
+\begin{itemize}
 \item data traffic volumes
 \item Number of connected devices
 \item Diverse requirements of 5G
 \item Energy consumption
 \end{itemize}
-\item Potential solutions 
-\begin{itemize} 
+\item Potential solutions
+\begin{itemize}
 \item Architectural design
 \item Network deployment
 \item Radio transmission
 \item Backhauling solutions
 \end{itemize}
-    \end{itemize}
+\end{itemize}
 \end{frame}
 \note{%
 Intro:
@@ -295,16 +324,6 @@ With this knowledge, it will also be possible to define new and holistic wireles
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Challenges}
-\end{frame}
-\note{
-Challenges:
-green design perspective will be discussed in the following subsections
-
-
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
 \frametitle{Reducing power consumption [181]}
 	\begin{center}
 	\includegraphics[scale=1]{consumption.png}
@@ -343,11 +362,6 @@ Other sources of energy may not be so profitable, as sun is the source with the
 highest amount of power, about \SI{100}{\milli\watt\per\centi\meter\squared}, 
 followed by the wind with \SI{12}{\milli\watt\per\centi\meter\squared}.
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{User-centric designs}
-\end{frame}
-\note{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Smaller frame overhead %
@@ -555,14 +569,25 @@ the ration of output power by input power, often higher than 85\%.
 
 \begin{itemize}
 
-	\item Power is computed by the average power level (high, med, low).
+	\item Power is computed by each load level (high, med, low).
 	\item Power supply correction factor and cooling factor.
 	\item Energy consumption rating: Power/effective throughput.
 
 \end{itemize}
 \end{frame}
 \note{
+The power consumption can be sampled at different load conditions, for example 
+high or busy hour, medium and low usage. Then the power consumption is averaged 
+with the time of each load estimation, giving a more realistic power 
+consumption.
 
+Both the power supply and cooling factor are unit specific and can be used to 
+correct the estimated power usage.
+
+The European Telecommunications Standards Institute (ETSI) doesn't provide an 
+energy efficiency metric for radio base stations, but the Energy Concumption 
+Rating (ECR) iniciative proposes the power consumption $P$ by throughput $T$ in 
+bits per seconds, $ECR = P/T$
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -576,7 +601,30 @@ the ration of output power by input power, often higher than 85\%.
 
 \end{itemize}
 \end{frame}
-\note{}
+\note{
+Wireless systems like cellular networks are deployed with careful network 
+planning. Coverage area in rural areas should be considered, whereas in urban 
+areas we often exceed the capacity of the systems.
+
+For the rural and cellular networks, the following EE metric can be used: The 
+area of coverage $A$ by the power consumption $P_c$, defined as $P = A/P_c$.
+
+However for a urban network, we may be interested in the number of suscribers 
+$N$ by the power consumption $P_c$, defined as $P = N / P_c$
+
+On the other hand, the usage of error correcting codes can have an impact in the 
+energy consumption. The EE metric $E = P/C$ is based on the transmitter power 
+$P$ and the bit rate $C$ of the channel.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Conclusions}
+
+\begin{itemize}
+	\item TBD
+\end{itemize}
+\end{frame}
+\note{
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
